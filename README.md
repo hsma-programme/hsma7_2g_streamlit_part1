@@ -1,7 +1,6 @@
 # HSMA-7 Module 2G: Creating a DES interface with Streamlit - Part 1
 
-**You can find links to view the slides and example apps at:
-This repository contains materials for module 2H: https://hsma-programme.github.io/hsma7_2g_streamlit_part1**
+**You can view the slides and apps for this module at: https://hsma-programme.github.io/hsma7_2g_streamlit_part1**
 
 ![](slides/template/banner_hq.png)
 
@@ -9,7 +8,9 @@ This repository contains materials for module 2H: https://hsma-programme.github.
 
 ## About this repository
 
-Simple examples (e.g., individual widgets) run directly within the slides using stlite. Larger apps are hosted separately to avoid the memory use of running multiple Pyodide sessions within the slides. These apps are deployed using two methods: **stlite** and **Streamlit Community Cloud**.
+Simple examples (e.g., individual widgets) are shared as screenshots, or run directly within the slides using stlite if it is anticipated the teacher will interact with the app. This is to avoid the memory use of running multiple Pyodide sessions within the slides.
+
+For this same reason, larger apps are hosted deployed separately, using two methods: **stlite** and **Streamlit Community Cloud**.
 
 GitHub Pages hosts the landing page, slides and stlite apps from this repository. The root `index.qmd` and `_quarto.yml` define the site, with the landing page linking to the slides and apps. Each app directory includes its own copy of the simulation model (`model.py`) and an `index.html` file for running the app with stlite.
 
