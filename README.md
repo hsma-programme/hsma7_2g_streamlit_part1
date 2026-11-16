@@ -10,7 +10,7 @@
 
 Simple examples (e.g., individual widgets) are shared as screenshots, or run directly within the slides using stlite if it is anticipated the teacher will interact with the app. This is to avoid the memory use of running multiple Pyodide sessions within the slides.
 
-For this same reason, larger apps are hosted deployed separately, using two methods: **stlite** and **Streamlit Community Cloud**.
+For this same reason, larger apps are deployed separately, using two methods: **stlite** and **Streamlit Community Cloud**.
 
 GitHub Pages hosts the landing page, slides and stlite apps from this repository. The root `index.qmd` and `_quarto.yml` define the site, with the landing page linking to the slides and apps. Each app directory includes its own copy of the simulation model (`model.py`) and an `index.html` file for running the app with stlite.
 
