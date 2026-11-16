@@ -9,4 +9,4 @@ st.slider(
     key="chosen_value",
 )
 
-st.write(f"Chosen number: {st.session_state.chosen_value}")
+st.write(f"Chosen value: {st.session_state.chosen_value}")

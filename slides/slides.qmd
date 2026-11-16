@@ -364,9 +364,13 @@ Let's start with text: a title, a header and a subheader.
 
 App:
 
+![](images/st_headers.png)
+
+<!--
 ```{stlite-python}
 {{< include code/fundamentals/headings.py >}}
 ```
+-->
 
 :::
 
@@ -391,9 +395,13 @@ Dedicated commands for different text styles, or `st.write()` for general-purpos
 
 ::: {.column width="50%"}
 
+![](images/st_text.png)
+
+<!--
 ```{stlite-python}
 {{< include code/fundamentals/text.py >}}
 ```
+-->
 
 :::
 
@@ -422,9 +430,13 @@ Set the prompt with `label`, the choices with `options`, and the starting positi
 
 ::: {.column width="50%"}
 
+![](images/st_radio.png)
+
+<!--
 ```{stlite-python}
 {{< include code/fundamentals/radio.py >}}
 ```
+-->
 
 :::
 
@@ -451,9 +463,13 @@ Use `label` and `options` as before, but set the starting choice with `default` 
 
 ::: {.column width="50%"}
 
+![](images/st_pills_seg.png)
+
+<!--
 ```{stlite-python}
 {{< include code/fundamentals/pills.py >}}
 ```
+-->
 
 :::
 
@@ -479,9 +495,13 @@ Set the prompt with `label`, the limits with `min_value` and `max_value`, the st
 
 ::: {.column width="50%"}
 
+![](images/st_slider_input.png)
+
+<!--
 ```{stlite-python}
 {{< include code/fundamentals/numeric.py >}}
 ```
+-->
 
 :::
 
@@ -494,13 +514,11 @@ Set the prompt with `label`, the limits with `min_value` and `max_value`, the st
 
 Access the chosen value through a variable or `st.session_state`.
 
-<br>
-
-To assign the widget's return value to a variable:
-
 :::: {.columns}
 
 ::: {.column width="60%"}
+
+To assign the widget's return value to a variable:
 
 ```{.python code-line-numbers="3,11"}
 {{< include code/fundamentals/assign.py >}}
@@ -509,6 +527,8 @@ To assign the widget's return value to a variable:
 :::
 
 ::: {.column width="40%"}
+
+We can move the slider and see how `chosen_value` changes.
 
 ```{stlite-python}
 {{< include code/fundamentals/assign.py >}}
@@ -523,11 +543,11 @@ To assign the widget's return value to a variable:
 
 ## Accessing the chosen value
 
-Alternatively, give the widget a `key` to access its value through `st.session_state`.
-
 :::: {.columns}
 
 ::: {.column width="60%"}
+
+Alternatively, give the widget a `key` to access its value through `st.session_state`:
 
 ```{.python code-line-numbers="9,12"}
 {{< include code/fundamentals/key.py >}}
@@ -537,6 +557,8 @@ Alternatively, give the widget a `key` to access its value through `st.session_s
 
 ::: {.column width="40%"}
 
+We can move the slider and see how `st.session_state.chosen_value` changes.
+
 ```{stlite-python}
 {{< include code/fundamentals/key.py >}}
 ```
@@ -545,6 +567,9 @@ Alternatively, give the widget a `key` to access its value through `st.session_s
 
 ::::
 
+<br>
+
+We recommend this approach as it provides a simple, consistent way to access widget values throughout your app (including from different pages of an app!)
 
 
 
@@ -770,11 +795,15 @@ We'll use our original default (`5`), then choose some suitable limits and a ste
 
 ::: {.column width="45%"}
 
+![](images/inputs_arrivals.png)
+
+<!--
 ```{stlite-python}
 import streamlit as st
 
 {{< include code/simple/input_iat.py >}}
 ```
+-->
 
 :::
 
@@ -797,11 +826,15 @@ import streamlit as st
 
 ::: {.column width="45%"}
 
+![](images/inputs_consultation.png)
+
+<!--
 ```{stlite-python}
 import streamlit as st
 
 {{< include code/simple/input_consultation.py >}}
 ```
+-->
 
 :::
 
@@ -824,11 +857,15 @@ import streamlit as st
 
 ::: {.column width="45%"}
 
+![](images/inputs_nurses.png)
+
+<!--
 ```{stlite-python}
 import streamlit as st
 
 {{< include code/simple/input_nurses.py >}}
 ```
+-->
 
 :::
 
@@ -884,11 +921,15 @@ import streamlit as st
 
 ::: {.column width="45%"}
 
+![](images/inputs_simulation.png)
+
+<!--
 ```{stlite-python}
 import streamlit as st
 
 {{< include code/simple/input_sim.py >}}
 ```
+-->
 
 :::
 
@@ -936,7 +977,7 @@ Previously we printed results to the terminal. We can display similar text in ou
 
 Various plotting libraries are supported. For example, using plotly, you create a figure then use `st.plotly_chart()` to display it in the app.
 
-```{.python code-line-numbers="39-50"}
+```{.python code-line-numbers="29-42"}
 {{< include code/simple/run_button_print_chart.py >}}
 ```
 
@@ -947,7 +988,7 @@ Various plotting libraries are supported. For example, using plotly, you create 
 
 We can create interactive tables with `st.dataframe()` or static tables with `st.table()`.
 
-```{.python code-line-numbers="52-62"}
+```{.python code-line-numbers="44-54"}
 {{< include code/simple/run_button_print_chart_df.py >}}
 ```
 
@@ -979,8 +1020,6 @@ Indent the code for the elements you want inside the container.
 ::::
 
 
-TODO: Show screenshots with and without container?
-OR: Have another app preview before? Ideally not...
 
 
 ## Improving layout: `st.expander`
@@ -997,7 +1036,7 @@ Let's hide the dataframe with results from individual replications.
 
 ::: {.column width="70%"}
 
-```{.python code-line-numbers="52"}
+```{.python code-line-numbers="44"}
 {{< include code/simple/run_layout_expander.py >}}
 ```
 
@@ -1022,7 +1061,7 @@ Set `size` to adjust the spacing. The default is `"small"`.
 
 ::: {.column width="70%"}
 
-```{.python code-line-numbers="47,91,105"}
+```{.python code-line-numbers="47,80,95"}
 {{< include ../app/singlepage/app.py >}}
 ```
 
@@ -1050,7 +1089,12 @@ Set `size` to adjust the spacing. The default is `"small"`.
 
 
 
-## Exercise
+# Exercise 1
+
+
+
+
+## Exercise 1
 
 Now it's your turn to build a Streamlit app!
 
@@ -1063,33 +1107,41 @@ You shouldn't need to make any changes to this file.
 
 
 
-## Exercise
+## Exercise 1
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="45%"}
+
+<br>
 
 Create an `app.py` script and work through these steps:
 
-1. Add input widgets so users can choose the model parameters.
-1. Add a button to run the model with their chosen inputs.
-1. Display the results (using code from `analysis.py`).
+1. Create input widgets so users can choose the model parameters.
+2. Create a button to run the model with their chosen inputs.
+3. Display results of the simulation (e.g., via text, figures and tables).
+
+:::
+
+::: {.column width="5%"}
 
 :::
 
 ::: {.column width="50%"}
 
-::: {.value-box icon="fa-solid fa-clock" icon-position="left" icon-size="2em" min-height="60px" width="50%" align="right"}
-?? minutes <br>+ ?? minute break
+::: {style="display: flex; justify-content: flex-end;"}
+::: {.value-box icon="fa-solid fa-clock" icon-position="left" icon-size="2em" min-height="0" padding="0.4rem 1rem" width="350px"}
+?? minutes + ?? minute break
+:::
 :::
 
 ::: {style="font-size: 80%"}
 
-### Extensions
-
-* Add `st.spinner()` to show when the simulation is running. If your simulation is too quick to show it, you can add `from time import sleep; sleep(3)`.
-* Add code from vidigi module to generate animation (this is the model from exercise 2 of that module). Show it in the app.
-* Instead of printing the summary of times mean/sd/90thperc/se/ci etc., try using `st.metric` to display the results.
+> **Extensions**
+> 
+> * Add `st.spinner()` to show when the simulation is running. If your simulation is too quick to show it, you can add `from time import time; time.sleep(1)`.
+> * This model is the same as the one from Module 2F Exercise 2. Use your animation code from that exercise to generate and display an animation within the app
+> * Instead of printing the mean / SD / 90th percentile / etc. with `st.write()`, try instead using `st.grid()` and `grid.metric()` to display the results as metric cards.
 
 :::
 
@@ -1175,18 +1227,82 @@ Now let's turn it into a multipage app by adding a homepage. This should:
 
 # Deploying your app on Streamlit Community Cloud
 
+
+
+
 ## Streamlit Community Cloud
 
-TODO: Explain what it is
+It is a free platform that allows you to share a Streamlit web app from a GitHub repository.
+
+::: {.columns .compact-columns}
+
+::: {.column .fragment width="50%"}
+
+**Pros:**
+
+* Easy to use - just provide GitHub URL.
+* Automatically updates with changes pushed to GitHub.
+* Can have unlimited number of public apps (limits on private apps).
+
+:::
+
+::: {.column .fragment width="50%"}
+
+**Cons:**
+
+* [Limited computing resources](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app#app-resources-and-limits) so apps with high usage may slow down or stop working.
+* After 12 hours without visitors, the app will "fall asleep", and users have to "wake it up" again.
+
+:::
+
+:::
+
+::: {.fragment}
+
+In practice: best suited to lightweight demonstrations and dashboards, and not for computationally intensive models or very high numbers of visitors.
+
+:::
 
 
 
 
 ## Deploying on Community Cloud
 
-1. Add a `requirements.txt` file.
+::: {.columns}
 
-TODO
+::: {.column width="60%"}
+
+**1. Add a `requirements.txt` file.**
+
+List the packages your app needs, including any specific versions. Save it in the repository root or alongside the app's Python file.
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="35%"}
+
+Example `requirements.txt`:
+
+```
+{{< include ../app/singlepage/requirements.txt >}}
+```
+
+:::
+
+:::
+
+<br>
+
+::: {.fragment}
+
+Community cloud also supports `uv.lock`, `Pipfile`, `environment.yml` and `pyproject.toml`. Just choose one to use. `requirements.txt` is the default choice.
+
+We will set the Python version separately in Community Cloud's settings later.
+
+:::
 
 
 
@@ -1204,6 +1320,8 @@ TODO
 
 3. In top right corner, click "Create app" then choose "Deploy a public app from GitHub".
 
+![](images/cloud_create.png)
+
 ![](images/cloud_github.png)
 
 
@@ -1211,7 +1329,7 @@ TODO
 
 ## Deploying on Community Cloud
 
-4. Enter details for the app you want to deploy.
+4. Enter details for the app you want to deploy and click "Deploy".
 
 ![](images/cloud_details.png){height=450px}
 
@@ -1221,16 +1339,66 @@ TODO
 
 ## Deploying on Community Cloud
 
-TODO
+Your new app will now be live! You can manage apps at <https://share.streamlit.io/> under "My apps". Click "⋮" next to app to view options (e.g., reboot, settings).
+
+![](images/cloud_apps.png)
 
 
 
 
 
-## Exercise
+## Deploying on Community Cloud
 
-**Task 1:** Add a homepage to the app you created in the last exercise.
+Under "Settings", you can choose the Python version.
 
-**Task 2:** Deploy your app on Streamlit Community Cloud.
+By default, it will use the latest supported by Community Cloud.
 
-TODO: Time
+![](images/cloud_settings.png){height="400px"}
+
+
+
+
+# Exercise 2
+
+
+
+
+## Exercise 2
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+Using the app you created in Exercise 1:
+
+1. Turn it into a multipage app with a homepage and a simulation page. On the homepage, explain what the model represents, how to use the app, and who created it.
+
+2. Deploy the app on Streamlit Community Cloud.
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="40%"}
+
+::: {style="display: flex; justify-content: flex-end;"}
+::: {.value-box icon="fa-solid fa-clock" icon-position="left" icon-size="2em" min-height="0" padding="0.4rem 1rem" width="350px"}
+?? minutes + ?? minute break
+:::
+:::
+
+::: {style="font-size: 80%"}
+
+> **Extensions**
+> 
+> * Add help text to inputs, including their units and what changing them represents.
+> * Display a message explaining the results in plain English, using values from the simulation.
+> * Add a results download using `st.download_button` so users can save their simulation outputs.
+
+:::
+
+:::
+
+::::

@@ -8,4 +8,4 @@ chosen_value = st.slider(
     step=1
 )
 
-st.write(f"Chosen number: {chosen_value}")
+st.write(f"Chosen value: {chosen_value}")

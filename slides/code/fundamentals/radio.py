@@ -1,7 +1,7 @@
 import streamlit as st
 
-st.pills(
+st.radio(
     label="Choose an option",
     options=["A", "B", "C"],
-    default="A",
+    index=0,
 )
