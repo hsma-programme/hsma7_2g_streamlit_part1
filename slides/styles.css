@@ -19,3 +19,17 @@
 .reveal .slides section.showcase figure > p {
   margin: 0;
 }
+
+
+/* ---------------------------------------------------------------------- */
+/* Columns with reduced spacing at top
+/* ---------------------------------------------------------------------- */
+
+.reveal .slides .compact-columns {
+  margin-top: 0;
+}
+
+.reveal .slides .compact-columns .column > p:first-child {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}

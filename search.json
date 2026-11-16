@@ -109,14 +109,14 @@
     "href": "slides/index.html#widgets-st.radio",
     "title": "",
     "section": "Widgets: st.radio",
-    "text": "Widgets: st.radio\nWidgets are interactive controls that let users provide input.\nFor example, st.radio lets users choose one option from a list.\nSet the prompt with label, the choices with options, and the starting position with index (0 selects the first option).\n\n\nimport streamlit as st\n\nst.pills(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    default=\"A\",\n)"
+    "text": "Widgets: st.radio\nWidgets are interactive controls that let users provide input.\nFor example, st.radio lets users choose one option from a list.\nSet the prompt with label, the choices with options, and the starting position with index (0 selects the first option).\n\n\nimport streamlit as st\n\nst.radio(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    index=0,\n)"
   },
   {
     "objectID": "slides/index.html#widgets-st.pills-and-st.segmented_control",
     "href": "slides/index.html#widgets-st.pills-and-st.segmented_control",
     "title": "",
     "section": "Widgets: st.pills and st.segmented_control",
-    "text": "Widgets: st.pills and st.segmented_control\nThese display the choices as buttons rather than a radio list.\nUse label and options as before, but set the starting choice with default (e.g., \"A\") rather than its position.\n\n\nimport streamlit as st\n\nst.segmented_control(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    default=\"A\",\n)\n\nst.radio(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    index=0,\n)"
+    "text": "Widgets: st.pills and st.segmented_control\nThese display the choices as buttons rather than a radio list.\nUse label and options as before, but set the starting choice with default (e.g., \"A\") rather than its position.\n\n\nimport streamlit as st\n\nst.pills(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    default=\"A\",\n)\n\nst.segmented_control(\n    label=\"Choose an option\",\n    options=[\"A\", \"B\", \"C\"],\n    default=\"A\",\n)"
   },
   {
     "objectID": "slides/index.html#widgets-st.slider-and-st.numeric_input",
@@ -130,14 +130,14 @@
     "href": "slides/index.html#accessing-the-chosen-value",
     "title": "",
     "section": "Accessing the chosen value",
-    "text": "Accessing the chosen value\nAccess the chosen value through a variable or st.session_state.\n\nTo assign the widget’s return value to a variable:\n\n\nimport streamlit as st\n\nchosen_value = st.slider(\n    label=\"Pick a number\", \n    min_value=0,\n    max_value=10,\n    value=2,\n    step=1\n)\n\nst.write(f\"Chosen number: {chosen_value}\")"
+    "text": "Accessing the chosen value\nAccess the chosen value through a variable or st.session_state.\n\n\nTo assign the widget’s return value to a variable:\nimport streamlit as st\n\nchosen_value = st.slider(\n    label=\"Pick a number\", \n    min_value=0,\n    max_value=10,\n    value=2,\n    step=1\n)\n\nst.write(f\"Chosen value: {chosen_value}\")\n\nWe can move the slider and see how chosen_value changes."
   },
   {
     "objectID": "slides/index.html#accessing-the-chosen-value-1",
     "href": "slides/index.html#accessing-the-chosen-value-1",
     "title": "",
     "section": "Accessing the chosen value",
-    "text": "Accessing the chosen value\nAlternatively, give the widget a key to access its value through st.session_state.\n\n\nimport streamlit as st\n\nst.slider(\n    label=\"Pick a number\",\n    min_value=0,\n    max_value=10,\n    value=2,\n    step=1,\n    key=\"chosen_value\",\n)\n\nst.write(f\"Chosen number: {st.session_state.chosen_value}\")"
+    "text": "Accessing the chosen value\n\n\nAlternatively, give the widget a key to access its value through st.session_state:\nimport streamlit as st\n\nst.slider(\n    label=\"Pick a number\",\n    min_value=0,\n    max_value=10,\n    value=2,\n    step=1,\n    key=\"chosen_value\",\n)\n\nst.write(f\"Chosen value: {st.session_state.chosen_value}\")\n\nWe can move the slider and see how st.session_state.chosen_value changes.\n\n\n\nWe recommend this approach as it provides a simple, consistent way to access widget values throughout your app (including from different pages of an app!)"
   },
   {
     "objectID": "slides/index.html#session-state",
@@ -270,7 +270,7 @@
     "href": "slides/index.html#improving-layout-st.container",
     "title": "",
     "section": "Improving layout: st.container",
-    "text": "Improving layout: st.container\n\n\nWe can group elements using st.container().\nLet’s add a border around our model parameters using with st.container(border=True):.\nIndent the code for the elements you want inside the container.\n\nwith st.container(border=True):\n    st.subheader(\"Patients\")\n\n    st.slider(\n        label=\"Mean patient inter-arrival time (minutes)\",\n        min_value=3.0,\n        max_value=7.0,\n        value=5.0,\n        step=0.25,\n        key=\"mean_patient_inter\",\n    )\n\n    st.subheader(\"Nurses\")\n\n    st.number_input(\n        label=\"Mean nurse consultation length (minutes)\",\n        min_value=3.0,\n        max_value=9.0,\n        value=6.0,\n        key=\"mean_nurse_consult_time\",\n    )\n\n    st.number_input(\n        label=\"Standard deviation of nurse consultation length (minutes)\",\n        min_value=0.0,\n        value=1.0,\n        key=\"sd_nurse_consult_time\",\n    )\n\n    st.pills(label=\"Number of nurses\", options=range(1, 5), default=1, key=\"num_nurses\")\n\n    st.number_input(\n        label=\"Cost per nurse per hour (£)\",\n        min_value=0.0,\n        value=30.0,\n        step=1.0,\n        key=\"nurse_cost_per_hour\",\n        help=\"Nurses are costed for the full simulation duration, including time when they are not seeing patients\",\n    )\n\n    st.space(size=\"xxsmall\")\n    st.subheader(\"Simulation\")\n\n    st.slider(\n        label=\"Simulation duration (minutes)\",\n        min_value=50,\n        max_value=200,\n        value=120,\n        key=\"sim_duration\",\n    )\n\n    st.slider(\n        label=\"Number of replications\",\n        min_value=10,\n        max_value=50,\n        value=30,\n        key=\"num_replications\",\n    )\n\nTODO: Show screenshots with and without container? OR: Have another app preview before? Ideally not…"
+    "text": "Improving layout: st.container\n\n\nWe can group elements using st.container().\nLet’s add a border around our model parameters using with st.container(border=True):.\nIndent the code for the elements you want inside the container.\n\nwith st.container(border=True):\n    st.subheader(\"Patients\")\n\n    st.slider(\n        label=\"Mean patient inter-arrival time (minutes)\",\n        min_value=3.0,\n        max_value=7.0,\n        value=5.0,\n        step=0.25,\n        key=\"mean_patient_inter\",\n    )\n\n    st.subheader(\"Nurses\")\n\n    st.number_input(\n        label=\"Mean nurse consultation length (minutes)\",\n        min_value=3.0,\n        max_value=9.0,\n        value=6.0,\n        key=\"mean_nurse_consult_time\",\n    )\n\n    st.number_input(\n        label=\"Standard deviation of nurse consultation length (minutes)\",\n        min_value=0.0,\n        value=1.0,\n        key=\"sd_nurse_consult_time\",\n    )\n\n    st.pills(label=\"Number of nurses\", options=range(1, 5), default=1, key=\"num_nurses\")\n\n    st.number_input(\n        label=\"Cost per nurse per hour (£)\",\n        min_value=0.0,\n        value=30.0,\n        step=1.0,\n        key=\"nurse_cost_per_hour\",\n        help=\"Nurses are costed for the full simulation duration, including time when they are not seeing patients\",\n    )\n\n    st.space(size=\"xxsmall\")\n    st.subheader(\"Simulation\")\n\n    st.slider(\n        label=\"Simulation duration (minutes)\",\n        min_value=50,\n        max_value=200,\n        value=120,\n        key=\"sim_duration\",\n    )\n\n    st.slider(\n        label=\"Number of replications\",\n        min_value=10,\n        max_value=50,\n        value=30,\n        key=\"num_replications\",\n    )"
   },
   {
     "objectID": "slides/index.html#improving-layout-st.expander",
@@ -301,18 +301,18 @@
     "text": "Our app (via stlite)\nView app in new tab"
   },
   {
-    "objectID": "slides/index.html#exercise",
-    "href": "slides/index.html#exercise",
+    "objectID": "slides/index.html#exercise-1-1",
+    "href": "slides/index.html#exercise-1-1",
     "title": "",
-    "section": "Exercise",
-    "text": "Exercise\nNow it’s your turn to build a Streamlit app!\nYou have been provided model.py. This is a simple multi-step branching model with a Trial class - the same model from module 2F (vidigi module) (exercise 2).\nYou shouldn’t need to make any changes to this file."
+    "section": "Exercise 1",
+    "text": "Exercise 1\nNow it’s your turn to build a Streamlit app!\nYou have been provided model.py. This is a simple multi-step branching model with a Trial class - the same model from module 2F (vidigi module) (exercise 2).\nYou shouldn’t need to make any changes to this file."
   },
   {
-    "objectID": "slides/index.html#exercise-1",
-    "href": "slides/index.html#exercise-1",
+    "objectID": "slides/index.html#exercise-1-2",
+    "href": "slides/index.html#exercise-1-2",
     "title": "",
-    "section": "Exercise",
-    "text": "Exercise\n\n\nCreate an app.py script and work through these steps:\n\nAdd input widgets so users can choose the model parameters.\nAdd a button to run the model with their chosen inputs.\nDisplay the results (using code from analysis.py).\n\n\n\n?? minutes + ?? minute break\n\n\nExtensions\n\nAdd st.spinner() to show when the simulation is running. If your simulation is too quick to show it, you can add from time import sleep; sleep(3).\nAdd code from vidigi module to generate animation (this is the model from exercise 2 of that module). Show it in the app.\nInstead of printing the summary of times mean/sd/90thperc/se/ci etc., try using st.metric to display the results."
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\n\nCreate an app.py script and work through these steps:\n\nCreate input widgets so users can choose the model parameters.\nCreate a button to run the model with their chosen inputs.\nDisplay results of the simulation (e.g., via text, figures and tables).\n\n\n\n\n\n\n?? minutes + ?? minute break\n\n\n\n\nExtensions\n\nAdd st.spinner() to show when the simulation is running. If your simulation is too quick to show it, you can add from time import time; time.sleep(1).\nThis model is the same as the one from Module 2F Exercise 2. Use your animation code from that exercise to generate and display an animation within the app\nInstead of printing the mean / SD / 90th percentile / etc. with st.write(), try instead using st.grid() and grid.metric() to display the results as metric cards."
   },
   {
     "objectID": "slides/index.html#multipage-apps-1",
@@ -354,14 +354,14 @@
     "href": "slides/index.html#streamlit-community-cloud",
     "title": "",
     "section": "Streamlit Community Cloud",
-    "text": "Streamlit Community Cloud\nTODO: Explain what it is"
+    "text": "Streamlit Community Cloud\nIt is a free platform that allows you to share a Streamlit web app from a GitHub repository.\n\n\nPros:\n\nEasy to use - just provide GitHub URL.\nAutomatically updates with changes pushed to GitHub.\nCan have unlimited number of public apps (limits on private apps).\n\n\nCons:\n\nLimited computing resources so apps with high usage may slow down or stop working.\nAfter 12 hours without visitors, the app will “fall asleep”, and users have to “wake it up” again.\n\n\n\nIn practice: best suited to lightweight demonstrations and dashboards, and not for computationally intensive models or very high numbers of visitors."
   },
   {
     "objectID": "slides/index.html#deploying-on-community-cloud",
     "href": "slides/index.html#deploying-on-community-cloud",
     "title": "",
     "section": "Deploying on Community Cloud",
-    "text": "Deploying on Community Cloud\n\nAdd a requirements.txt file.\n\nTODO"
+    "text": "Deploying on Community Cloud\n\n\n1. Add a requirements.txt file.\nList the packages your app needs, including any specific versions. Save it in the repository root or alongside the app’s Python file.\n\n\n\nExample requirements.txt:\nsimpy==4.1.2\nnumpy==2.5.3\npandas==3.0.6\nsim-tools==1.3.0\nstreamlit==1.67.0\n\n\n\n\nCommunity cloud also supports uv.lock, Pipfile, environment.yml and pyproject.toml. Just choose one to use. requirements.txt is the default choice.\nWe will set the Python version separately in Community Cloud’s settings later."
   },
   {
     "objectID": "slides/index.html#deploying-on-community-cloud-1",
@@ -382,21 +382,28 @@
     "href": "slides/index.html#deploying-on-community-cloud-3",
     "title": "",
     "section": "Deploying on Community Cloud",
-    "text": "Deploying on Community Cloud\n\nEnter details for the app you want to deploy."
+    "text": "Deploying on Community Cloud\n\nEnter details for the app you want to deploy and click “Deploy”."
   },
   {
     "objectID": "slides/index.html#deploying-on-community-cloud-4",
     "href": "slides/index.html#deploying-on-community-cloud-4",
     "title": "",
     "section": "Deploying on Community Cloud",
-    "text": "Deploying on Community Cloud\nTODO"
+    "text": "Deploying on Community Cloud\nYour new app will now be live! You can manage apps at https://share.streamlit.io/ under “My apps”. Click “⋮” next to app to view options (e.g., reboot, settings)."
   },
   {
-    "objectID": "slides/index.html#exercise-2",
-    "href": "slides/index.html#exercise-2",
+    "objectID": "slides/index.html#deploying-on-community-cloud-5",
+    "href": "slides/index.html#deploying-on-community-cloud-5",
     "title": "",
-    "section": "Exercise",
-    "text": "Exercise\nTask 1: Add a homepage to the app you created in the last exercise.\nTask 2: Deploy your app on Streamlit Community Cloud.\nTODO: Time"
+    "section": "Deploying on Community Cloud",
+    "text": "Deploying on Community Cloud\nUnder “Settings”, you can choose the Python version.\nBy default, it will use the latest supported by Community Cloud."
+  },
+  {
+    "objectID": "slides/index.html#exercise-2-1",
+    "href": "slides/index.html#exercise-2-1",
+    "title": "",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nUsing the app you created in Exercise 1:\n\nTurn it into a multipage app with a homepage and a simulation page. On the homepage, explain what the model represents, how to use the app, and who created it.\nDeploy the app on Streamlit Community Cloud.\n\n\n\n\n\n\n?? minutes + ?? minute break\n\n\n\n\nExtensions\n\nAdd help text to inputs, including their units and what changing them represents.\nDisplay a message explaining the results in plain English, using values from the simulation.\nAdd a results download using st.download_button so users can save their simulation outputs."
   },
   {
     "objectID": "index.html",

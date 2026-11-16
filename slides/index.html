@@ -401,8 +401,19 @@
 <span id="cb4-7"><a aria-label="7"></a>st.subheader(<span class="st">"This is a subheader"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p>App:</p>
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.title%28%22This%20is%20a%20title%22%29%0A%0Ast.header%28%22This%20is%20a%20header%22%29%0A%0Ast.subheader%28%22This%20is%20a%20subheader%22%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/st_headers.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.title("This is a title")
+
+st.header("This is a header")
+
+st.subheader("This is a subheader")
+
+```
+-->
 </div></div>
 </section>
 <section id="other-streamlit-text" class="slide level2">
@@ -424,8 +435,25 @@
 <span id="cb5-12"><a aria-label="12"></a></span>
 <span id="cb5-13"><a aria-label="13"></a>st.code(<span class="st">"Code"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.write%28%22Text%22%29%0A%0Ast.markdown%28%22Text%20with%20%2A%2Amarkdown%2A%2A%22%29%0A%0Ast.text%28%22Text%20%2A%2Awithout%20markdown%2A%2A%22%29%0A%0Ast.badge%28%22Badge%22%29%0A%0Ast.caption%28%22Caption%22%29%0A%0Ast.code%28%22Code%22%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/st_text.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.write("Text")
+
+st.markdown("Text with **markdown**")
+
+st.text("Text **without markdown**")
+
+st.badge("Badge")
+
+st.caption("Caption")
+
+st.code("Code")
+
+```
+-->
 </div></div>
 </section>
 <section id="widgets-st.radio" class="slide level2">
@@ -437,14 +465,25 @@
 <div class="column" style="width:50%;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
 <span id="cb6-2"><a aria-label="2"></a></span>
-<span id="cb6-3"><a aria-label="3"></a>st.pills(</span>
+<span id="cb6-3"><a aria-label="3"></a>st.radio(</span>
 <span id="cb6-4"><a aria-label="4"></a>    label<span class="op">=</span><span class="st">"Choose an option"</span>,</span>
 <span id="cb6-5"><a aria-label="5"></a>    options<span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>],</span>
-<span id="cb6-6"><a aria-label="6"></a>    default<span class="op">=</span><span class="st">"A"</span>,</span>
+<span id="cb6-6"><a aria-label="6"></a>    index<span class="op">=</span><span class="dv">0</span>,</span>
 <span id="cb6-7"><a aria-label="7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.pills%28%0A%20%20%20%20label%3D%22Choose%20an%20option%22%2C%0A%20%20%20%20options%3D%5B%22A%22%2C%20%22B%22%2C%20%22C%22%5D%2C%0A%20%20%20%20default%3D%22A%22%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/st_radio.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.radio(
+    label="Choose an option",
+    options=["A", "B", "C"],
+    index=0,
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="widgets-st.pills-and-st.segmented_control" class="slide level2">
@@ -455,20 +494,37 @@
 <div class="column" style="width:50%;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
 <span id="cb7-2"><a aria-label="2"></a></span>
-<span id="cb7-3"><a aria-label="3"></a>st.segmented_control(</span>
+<span id="cb7-3"><a aria-label="3"></a>st.pills(</span>
 <span id="cb7-4"><a aria-label="4"></a>    label<span class="op">=</span><span class="st">"Choose an option"</span>,</span>
 <span id="cb7-5"><a aria-label="5"></a>    options<span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>],</span>
 <span id="cb7-6"><a aria-label="6"></a>    default<span class="op">=</span><span class="st">"A"</span>,</span>
 <span id="cb7-7"><a aria-label="7"></a>)</span>
 <span id="cb7-8"><a aria-label="8"></a></span>
-<span id="cb7-9"><a aria-label="9"></a>st.radio(</span>
+<span id="cb7-9"><a aria-label="9"></a>st.segmented_control(</span>
 <span id="cb7-10"><a aria-label="10"></a>    label<span class="op">=</span><span class="st">"Choose an option"</span>,</span>
 <span id="cb7-11"><a aria-label="11"></a>    options<span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>],</span>
-<span id="cb7-12"><a aria-label="12"></a>    index<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb7-12"><a aria-label="12"></a>    default<span class="op">=</span><span class="st">"A"</span>,</span>
 <span id="cb7-13"><a aria-label="13"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.segmented_control%28%0A%20%20%20%20label%3D%22Choose%20an%20option%22%2C%0A%20%20%20%20options%3D%5B%22A%22%2C%20%22B%22%2C%20%22C%22%5D%2C%0A%20%20%20%20default%3D%22A%22%2C%0A%29%0A%0Ast.radio%28%0A%20%20%20%20label%3D%22Choose%20an%20option%22%2C%0A%20%20%20%20options%3D%5B%22A%22%2C%20%22B%22%2C%20%22C%22%5D%2C%0A%20%20%20%20index%3D0%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/st_pills_seg.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.pills(
+    label="Choose an option",
+    options=["A", "B", "C"],
+    default="A",
+)
+
+st.segmented_control(
+    label="Choose an option",
+    options=["A", "B", "C"],
+    default="A",
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="widgets-st.slider-and-st.numeric_input" class="slide level2">
@@ -495,17 +551,37 @@
 <span id="cb8-16"><a aria-label="16"></a>    step<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb8-17"><a aria-label="17"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%2C%0A%29%0A%0Ast.number_input%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/st_slider_input.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.slider(
+    label="Pick a number",
+    min_value=0,
+    max_value=10,
+    value=2,
+    step=1,
+)
+
+st.number_input(
+    label="Pick a number",
+    min_value=0,
+    max_value=10,
+    value=2,
+    step=1,
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="accessing-the-chosen-value" class="slide level2">
 <h2>Accessing the chosen value</h2>
 <p>Access the chosen value through a variable or <code>st.session_state</code>.</p>
-<p><br></p>
-<p>To assign the widget’s return value to a variable:</p>
 <div class="columns">
 <div class="column" style="width:60%;">
+<p>To assign the widget’s return value to a variable:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-code-line-numbers="3,11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
 <span id="cb9-2"><a aria-label="2"></a></span>
 <span id="cb9-3"><a aria-label="3"></a>chosen_value <span class="op">=</span> st.slider(</span>
@@ -516,17 +592,18 @@
 <span id="cb9-8"><a aria-label="8"></a>    step<span class="op">=</span><span class="dv">1</span></span>
 <span id="cb9-9"><a aria-label="9"></a>)</span>
 <span id="cb9-10"><a aria-label="10"></a></span>
-<span id="cb9-11"><a aria-label="11"></a>st.write(<span class="ss">f"Chosen number: </span><span class="sc">{</span>chosen_value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-11"><a aria-label="11"></a>st.write(<span class="ss">f"Chosen value: </span><span class="sc">{</span>chosen_value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:40%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Achosen_value%20%3D%20st.slider%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%20%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%0A%29%0A%0Ast.write%28f%22Chosen%20number%3A%20%7Bchosen_value%7D%22%29%0A
+<p>We can move the slider and see how <code>chosen_value</code> changes.</p>
+<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Achosen_value%20%3D%20st.slider%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%20%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%0A%29%0A%0Ast.write%28f%22Chosen%20value%3A%20%7Bchosen_value%7D%22%29%0A
 " class="stlite"></iframe>
 </div></div>
 </section>
 <section id="accessing-the-chosen-value-1" class="slide level2">
 <h2>Accessing the chosen value</h2>
-<p>Alternatively, give the widget a <code>key</code> to access its value through <code>st.session_state</code>.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
+<p>Alternatively, give the widget a <code>key</code> to access its value through <code>st.session_state</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-code-line-numbers="9,12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
 <span id="cb10-2"><a aria-label="2"></a></span>
 <span id="cb10-3"><a aria-label="3"></a>st.slider(</span>
@@ -538,11 +615,14 @@
 <span id="cb10-9"><a aria-label="9"></a>    key<span class="op">=</span><span class="st">"chosen_value"</span>,</span>
 <span id="cb10-10"><a aria-label="10"></a>)</span>
 <span id="cb10-11"><a aria-label="11"></a></span>
-<span id="cb10-12"><a aria-label="12"></a>st.write(<span class="ss">f"Chosen number: </span><span class="sc">{</span>st<span class="sc">.</span>session_state<span class="sc">.</span>chosen_value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-12"><a aria-label="12"></a>st.write(<span class="ss">f"Chosen value: </span><span class="sc">{</span>st<span class="sc">.</span>session_state<span class="sc">.</span>chosen_value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:40%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%2C%0A%20%20%20%20key%3D%22chosen_value%22%2C%0A%29%0A%0Ast.write%28f%22Chosen%20number%3A%20%7Bst.session_state.chosen_value%7D%22%29%0A
+<p>We can move the slider and see how <code>st.session_state.chosen_value</code> changes.</p>
+<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Pick%20a%20number%22%2C%0A%20%20%20%20min_value%3D0%2C%0A%20%20%20%20max_value%3D10%2C%0A%20%20%20%20value%3D2%2C%0A%20%20%20%20step%3D1%2C%0A%20%20%20%20key%3D%22chosen_value%22%2C%0A%29%0A%0Ast.write%28f%22Chosen%20value%3A%20%7Bst.session_state.chosen_value%7D%22%29%0A
 " class="stlite"></iframe>
 </div></div>
+<p><br></p>
+<p>We recommend this approach as it provides a simple, consistent way to access widget values throughout your app (including from different pages of an app!)</p>
 </section>
 <section id="session-state" class="slide level2">
 <h2>Session state</h2>
@@ -896,8 +976,22 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <span id="cb16-7"><a aria-label="7"></a>    key<span class="op">=</span><span class="st">"mean_patient_inter"</span>,</span>
 <span id="cb16-8"><a aria-label="8"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:45%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Mean%20patient%20inter-arrival%20time%20%28minutes%29%22%2C%0A%20%20%20%20min_value%3D3.0%2C%0A%20%20%20%20max_value%3D7.0%2C%0A%20%20%20%20value%3D5.0%2C%0A%20%20%20%20step%3D0.25%2C%0A%20%20%20%20key%3D%22mean_patient_inter%22%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/inputs_arrivals.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.slider(
+    label="Mean patient inter-arrival time (minutes)",
+    min_value=3.0,
+    max_value=7.0,
+    value=5.0,
+    step=0.25,
+    key="mean_patient_inter",
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="inputs-consultation-time" class="slide level2">
@@ -919,8 +1013,28 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <span id="cb17-13"><a aria-label="13"></a>    key<span class="op">=</span><span class="st">"sd_nurse_consult_time"</span>,</span>
 <span id="cb17-14"><a aria-label="14"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:45%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.number_input%28%0A%20%20%20%20label%3D%22Mean%20nurse%20consultation%20length%20%28minutes%29%22%2C%0A%20%20%20%20min_value%3D3.0%2C%0A%20%20%20%20max_value%3D9.0%2C%0A%20%20%20%20value%3D6.0%2C%0A%20%20%20%20key%3D%22mean_nurse_consult_time%22%2C%0A%29%0A%0Ast.number_input%28%0A%20%20%20%20label%3D%22Standard%20deviation%20of%20nurse%20consultation%20length%20%28minutes%29%22%2C%0A%20%20%20%20min_value%3D0.0%2C%0A%20%20%20%20value%3D1.0%2C%0A%20%20%20%20key%3D%22sd_nurse_consult_time%22%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/inputs_consultation.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.number_input(
+    label="Mean nurse consultation length (minutes)",
+    min_value=3.0,
+    max_value=9.0,
+    value=6.0,
+    key="mean_nurse_consult_time",
+)
+
+st.number_input(
+    label="Standard deviation of nurse consultation length (minutes)",
+    min_value=0.0,
+    value=1.0,
+    key="sd_nurse_consult_time",
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="inputs-number-of-nurses" class="slide level2">
@@ -934,8 +1048,20 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <span id="cb18-5"><a aria-label="5"></a>    key<span class="op">=</span><span class="st">"num_nurses"</span>,</span>
 <span id="cb18-6"><a aria-label="6"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:45%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.pills%28%0A%20%20%20%20label%3D%22Number%20of%20nurses%22%2C%0A%20%20%20%20options%3Drange%281%2C%205%29%2C%0A%20%20%20%20default%3D1%2C%0A%20%20%20%20key%3D%22num_nurses%22%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/inputs_nurses.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.pills(
+    label="Number of nurses",
+    options=range(1, 5),
+    default=1,
+    key="num_nurses",
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="inputs-hourly-cost" class="slide level2">
@@ -978,8 +1104,29 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <span id="cb20-14"><a aria-label="14"></a>    key<span class="op">=</span><span class="st">"num_replications"</span>,</span>
 <span id="cb20-15"><a aria-label="15"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:45%;">
-<iframe src="https://share.stlite.net/?embed=true#code=import%20streamlit%20as%20st%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Simulation%20duration%20%28minutes%29%22%2C%0A%20%20%20%20min_value%3D50%2C%0A%20%20%20%20max_value%3D200%2C%0A%20%20%20%20value%3D120%2C%0A%20%20%20%20key%3D%22sim_duration%22%2C%0A%29%0A%0Ast.slider%28%0A%20%20%20%20label%3D%22Number%20of%20replications%22%2C%0A%20%20%20%20min_value%3D10%2C%0A%20%20%20%20max_value%3D50%2C%0A%20%20%20%20value%3D30%2C%0A%20%20%20%20key%3D%22num_replications%22%2C%0A%29%0A
-" class="stlite"></iframe>
+<p><img data-src="images/inputs_simulation.png"></p>
+<!--
+```ufjzkdpvqvcshiw
+import streamlit as st
+
+st.slider(
+    label="Simulation duration (minutes)",
+    min_value=50,
+    max_value=200,
+    value=120,
+    key="sim_duration",
+)
+
+st.slider(
+    label="Number of replications",
+    min_value=10,
+    max_value=50,
+    value=30,
+    key="num_replications",
+)
+
+```
+-->
 </div></div>
 </section>
 <section id="run-model-using-the-inputs" class="slide level2">
@@ -1050,7 +1197,7 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <section id="charts" class="slide level2">
 <h2>Charts</h2>
 <p>Various plotting libraries are supported. For example, using plotly, you create a figure then use <code>st.plotly_chart()</code> to display it in the app.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-code-line-numbers="39-50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-code-line-numbers="29-42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
 <span id="cb24-2"><a aria-label="2"></a>    params <span class="op">=</span> Param(</span>
 <span id="cb24-3"><a aria-label="3"></a>        mean_patient_inter<span class="op">=</span>st.session_state.mean_patient_inter,</span>
 <span id="cb24-4"><a aria-label="4"></a>        mean_nurse_consult_time<span class="op">=</span>st.session_state.mean_nurse_consult_time,</span>
@@ -1096,7 +1243,7 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <section id="dataframes" class="slide level2">
 <h2>Dataframes</h2>
 <p>We can create interactive tables with <code>st.dataframe()</code> or static tables with <code>st.table()</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-code-line-numbers="52-62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-code-line-numbers="44-54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
 <span id="cb25-2"><a aria-label="2"></a>    params <span class="op">=</span> Param(</span>
 <span id="cb25-3"><a aria-label="3"></a>        mean_patient_inter<span class="op">=</span>st.session_state.mean_patient_inter,</span>
 <span id="cb25-4"><a aria-label="4"></a>        mean_nurse_consult_time<span class="op">=</span>st.session_state.mean_nurse_consult_time,</span>
@@ -1218,7 +1365,6 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <span id="cb26-57"><a aria-label="57"></a>        key<span class="op">=</span><span class="st">"num_replications"</span>,</span>
 <span id="cb26-58"><a aria-label="58"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
-<p>TODO: Show screenshots with and without container? OR: Have another app preview before? Ideally not…</p>
 </section>
 <section id="improving-layout-st.expander" class="slide level2">
 <h2>Improving layout: <code>st.expander</code></h2>
@@ -1227,7 +1373,7 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <p><code>st.expander()</code> can be used to hide optional data.</p>
 <p>Let’s hide the dataframe with results from individual replications.</p>
 </div><div class="column" style="width:70%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-code-line-numbers="52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-code-line-numbers="44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-label="1"></a><span class="cf">if</span> st.button(<span class="st">"Run simulation"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"primary"</span>):</span>
 <span id="cb27-2"><a aria-label="2"></a>    params <span class="op">=</span> Param(</span>
 <span id="cb27-3"><a aria-label="3"></a>        mean_patient_inter<span class="op">=</span>st.session_state.mean_patient_inter,</span>
 <span id="cb27-4"><a aria-label="4"></a>        mean_nurse_consult_time<span class="op">=</span>st.session_state.mean_nurse_consult_time,</span>
@@ -1291,7 +1437,7 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <p>Use <code>st.space()</code> to add space between sections of the app.</p>
 <p>Set <code>size</code> to adjust the spacing. The default is <code>"small"</code>.</p>
 </div><div class="column" style="width:70%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-code-line-numbers="47,91,105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-label="1"></a><span class="co">"""Simple single-page app."""</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-code-line-numbers="47,80,95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-label="1"></a><span class="co">"""Simple single-page app."""</span></span>
 <span id="cb28-2"><a aria-label="2"></a></span>
 <span id="cb28-3"><a aria-label="3"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb28-4"><a aria-label="4"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
@@ -1423,36 +1569,48 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <section id="our-app-via-stlite" class="slide level2">
 <h2>Our app (via stlite)</h2>
 <p><a href="https://hsma-programme.github.io/hsma7_2g_streamlit_part1/app/singlepage/" target="_blank">View app in new tab</a></p>
+</section></section>
+<section>
+<section id="exercise-1" class="title-slide slide level1 center">
+<h1>Exercise 1</h1>
+
 </section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
+<section id="exercise-1-1" class="slide level2">
+<h2>Exercise 1</h2>
 <p>Now it’s your turn to build a Streamlit app!</p>
 <p>You have been provided <code>model.py</code>. This is a simple multi-step branching model with a Trial class - the same model from module 2F (vidigi module) (exercise 2).</p>
 <p>You shouldn’t need to make any changes to this file.</p>
 <p><img data-src="../exercises/model_diagram.drawio.png"></p>
 </section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
+<section id="exercise-1-2" class="slide level2">
+<h2>Exercise 1</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
+<p><br></p>
 <p>Create an <code>app.py</code> script and work through these steps:</p>
 <ol type="1">
-<li>Add input widgets so users can choose the model parameters.</li>
-<li>Add a button to run the model with their chosen inputs.</li>
-<li>Display the results (using code from <code>analysis.py</code>).</li>
+<li>Create input widgets so users can choose the model parameters.</li>
+<li>Create a button to run the model with their chosen inputs.</li>
+<li>Display results of the simulation (e.g., via text, figures and tables).</li>
 </ol>
+</div><div class="column" style="width:5%;">
+
 </div><div class="column" style="width:50%;">
-<div class="value-box vb-icon-left bg-blue" style="--vb-width:50%; --vb-min-height:60px; --vb-text-align:right; --vb-icon-align:flex-end; "><i class="icon fa-solid fa-clock" style="font-size:2em; "></i><div class="vb-content" style=""><div class="details" style="">
-<p>?? minutes <br>+ ?? minute break</p>
+<div style="display: flex; justify-content: flex-end;">
+<div class="value-box vb-icon-left bg-blue" style="--vb-width:350px; --vb-min-height:0; --vb-padding:0.4rem 1rem; "><i class="icon fa-solid fa-clock" style="font-size:2em; "></i><div class="vb-content" style=""><div class="details" style="">
+<p>?? minutes + ?? minute break</p>
 </div></div></div>
-<section id="extensions" style="font-size: 80%">
-<h3>Extensions</h3>
+</div>
+<div style="font-size: 80%">
+<blockquote>
+<p><strong>Extensions</strong></p>
 <ul>
-<li>Add <code>st.spinner()</code> to show when the simulation is running. If your simulation is too quick to show it, you can add <code>from time import sleep; sleep(3)</code>.</li>
-<li>Add code from vidigi module to generate animation (this is the model from exercise 2 of that module). Show it in the app.</li>
-<li>Instead of printing the summary of times mean/sd/90thperc/se/ci etc., try using <code>st.metric</code> to display the results.</li>
+<li>Add <code>st.spinner()</code> to show when the simulation is running. If your simulation is too quick to show it, you can add <code>from time import time; time.sleep(1)</code>.</li>
+<li>This model is the same as the one from Module 2F Exercise 2. Use your animation code from that exercise to generate and display an animation within the app</li>
+<li>Instead of printing the mean / SD / 90th percentile / etc. with <code>st.write()</code>, try instead using <code>st.grid()</code> and <code>grid.metric()</code> to display the results as metric cards.</li>
 </ul>
-</section>
+</blockquote>
+</div>
 </div></div>
 </section></section>
 <section>
@@ -1535,14 +1693,48 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 </section>
 <section id="streamlit-community-cloud" class="slide level2">
 <h2>Streamlit Community Cloud</h2>
-<p>TODO: Explain what it is</p>
+<p>It is a free platform that allows you to share a Streamlit web app from a GitHub repository.</p>
+<div class="columns compact-columns">
+<div class="column fragment" style="width:50%;">
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Easy to use - just provide GitHub URL.</li>
+<li>Automatically updates with changes pushed to GitHub.</li>
+<li>Can have unlimited number of public apps (limits on private apps).</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>Cons:</strong></p>
+<ul>
+<li><a href="https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app#app-resources-and-limits">Limited computing resources</a> so apps with high usage may slow down or stop working.</li>
+<li>After 12 hours without visitors, the app will “fall asleep”, and users have to “wake it up” again.</li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>In practice: best suited to lightweight demonstrations and dashboards, and not for computationally intensive models or very high numbers of visitors.</p>
+</div>
 </section>
 <section id="deploying-on-community-cloud" class="slide level2">
 <h2>Deploying on Community Cloud</h2>
-<ol type="1">
-<li>Add a <code>requirements.txt</code> file.</li>
-</ol>
-<p>TODO</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>1. Add a <code>requirements.txt</code> file.</strong></p>
+<p>List the packages your app needs, including any specific versions. Save it in the repository root or alongside the app’s Python file.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<p>Example <code>requirements.txt</code>:</p>
+<pre><code>simpy==4.1.2
+numpy==2.5.3
+pandas==3.0.6
+sim-tools==1.3.0
+streamlit==1.67.0
+</code></pre>
+</div></div>
+<p><br></p>
+<div class="fragment">
+<p>Community cloud also supports <code>uv.lock</code>, <code>Pipfile</code>, <code>environment.yml</code> and <code>pyproject.toml</code>. Just choose one to use. <code>requirements.txt</code> is the default choice.</p>
+<p>We will set the Python version separately in Community Cloud’s settings later.</p>
+</div>
 </section>
 <section id="deploying-on-community-cloud-1" class="slide level2">
 <h2>Deploying on Community Cloud</h2>
@@ -1556,24 +1748,60 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 <ol start="3" type="1">
 <li>In top right corner, click “Create app” then choose “Deploy a public app from GitHub”.</li>
 </ol>
+<p><img data-src="images/cloud_create.png"></p>
 <p><img data-src="images/cloud_github.png"></p>
 </section>
 <section id="deploying-on-community-cloud-3" class="slide level2">
 <h2>Deploying on Community Cloud</h2>
 <ol start="4" type="1">
-<li>Enter details for the app you want to deploy.</li>
+<li>Enter details for the app you want to deploy and click “Deploy”.</li>
 </ol>
 <p><img data-src="images/cloud_details.png" height="450"></p>
 </section>
 <section id="deploying-on-community-cloud-4" class="slide level2">
 <h2>Deploying on Community Cloud</h2>
-<p>TODO</p>
+<p>Your new app will now be live! You can manage apps at <a href="https://share.streamlit.io/" class="uri">https://share.streamlit.io/</a> under “My apps”. Click “⋮” next to app to view options (e.g., reboot, settings).</p>
+<p><img data-src="images/cloud_apps.png"></p>
 </section>
-<section id="exercise-2" class="slide level2">
-<h2>Exercise</h2>
-<p><strong>Task 1:</strong> Add a homepage to the app you created in the last exercise.</p>
-<p><strong>Task 2:</strong> Deploy your app on Streamlit Community Cloud.</p>
-<p>TODO: Time</p>
+<section id="deploying-on-community-cloud-5" class="slide level2">
+<h2>Deploying on Community Cloud</h2>
+<p>Under “Settings”, you can choose the Python version.</p>
+<p>By default, it will use the latest supported by Community Cloud.</p>
+<p><img data-src="images/cloud_settings.png" height="400"></p>
+</section></section>
+<section>
+<section id="exercise-2" class="title-slide slide level1 center">
+<h1>Exercise 2</h1>
+
+</section>
+<section id="exercise-2-1" class="slide level2">
+<h2>Exercise 2</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Using the app you created in Exercise 1:</p>
+<ol type="1">
+<li><p>Turn it into a multipage app with a homepage and a simulation page. On the homepage, explain what the model represents, how to use the app, and who created it.</p></li>
+<li><p>Deploy the app on Streamlit Community Cloud.</p></li>
+</ol>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div style="display: flex; justify-content: flex-end;">
+<div class="value-box vb-icon-left bg-blue" style="--vb-width:350px; --vb-min-height:0; --vb-padding:0.4rem 1rem; "><i class="icon fa-solid fa-clock" style="font-size:2em; "></i><div class="vb-content" style=""><div class="details" style="">
+<p>?? minutes + ?? minute break</p>
+</div></div></div>
+</div>
+<div style="font-size: 80%">
+<blockquote>
+<p><strong>Extensions</strong></p>
+<ul>
+<li>Add help text to inputs, including their units and what changing them represents.</li>
+<li>Display a message explaining the results in plain English, using values from the simulation.</li>
+<li>Add a results download using <code>st.download_button</code> so users can save their simulation outputs.</li>
+</ul>
+</blockquote>
+</div>
+</div></div>
 
 
 </section></section>
