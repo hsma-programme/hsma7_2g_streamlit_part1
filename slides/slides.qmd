@@ -1228,7 +1228,7 @@ Since we've add `DEFAULTS`, it makes sense to use this when creating each input 
 
 **3. Add button**
 
-To place a "Reset" button next to "Run simulation", wrap both in a container with `horizontal=True`.
+To place a reset button next to "Run simulation", wrap both in a container with `horizontal=True`.
 
 Assign the run button to `run` so you can use it later. For the reset button, set `on_click=reset_widgets`, so clicking it calls the reset function.
 

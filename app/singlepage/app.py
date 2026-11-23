@@ -90,7 +90,7 @@ with st.container(border=True):
 
 with st.container(horizontal=True):
     run = st.button("Run simulation", type="primary")
-    st.button("Reset", on_click=reset_widgets)
+    st.button("Reset to defaults", on_click=reset_widgets)
 
 if run:
     params = Param(
