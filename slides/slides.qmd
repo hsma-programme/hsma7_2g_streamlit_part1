@@ -1121,6 +1121,37 @@ Set `size` to adjust the spacing. The default is `"small"`.
 ::: {.column width="70%"}
 
 ```{.python code-line-numbers="51,84,99"}
+{{< include code/simple/run_layout_expander_space.py >}}
+```
+
+:::
+
+::::
+
+
+
+
+## Reset button
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+If we refresh the browser page, it will reset our app. However, users may not realise this, and may be unsure how to reset it.
+
+We can make it easy for them by adding a reset button.
+
+<br>
+
+The updated code is on the right - lets work through it...
+
+:::
+
+::: {.column width="50%"}
+
+```{.python}
 {{< include ../app/singlepage/app.py >}}
 ```
 
@@ -1128,6 +1159,105 @@ Set `size` to adjust the spacing. The default is `"small"`.
 
 ::::
 
+
+
+
+## Reset button
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br><br>
+
+**1. Reset widgets function**
+
+The new `reset_widgets()` function replaces the value of each input in the session state using `DEAFULTS`.
+
+`DEFAULTS` is a new dictionary at the start of the script. It holds the default value for every input widget.
+
+:::
+
+::: {.column width="50%"}
+
+```{.python code-line-numbers="7-20"}
+{{< include ../app/singlepage/app.py >}}
+```
+
+:::
+
+::::
+
+
+
+
+## Reset button
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br><br>
+
+**2. Use `DEFAULTS`**
+
+Since we've add `DEFAULTS`, it makes sense to use this when creating each input widget, rather than repeat the default for each item twice.
+
+:::
+
+::: {.column width="50%"}
+
+```{.python code-line-numbers="30,44,52,59,66,79,87"}
+{{< include ../app/singlepage/app.py >}}
+```
+
+:::
+
+::::
+
+
+
+
+## Reset button
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+**3. Add button**
+
+To place a "Reset" button next to "Run simulation", wrap both in a container with `horizontal=True`.
+
+Assign the run button to `run` so you can use it later. For the reset button, set `on_click=reset_widgets`, so clicking it calls the reset function.
+
+:::
+
+::: {.column width="50%"}
+
+```{.python code-line-numbers="91-95"}
+{{< include ../app/singlepage/app.py >}}
+```
+
+:::
+
+::::
+
+
+
+
+## Callbacks
+
+`on_click=reset_widgets` is known as a **callback** in Streamlit.
+
+A callback is a function that Streamlit runs when the user interacts with a widget. Here that means clicking the button.
+
+::: {.fragment}
+
+Callbacks are not unique to buttons. Most input widgets accept an `on_change` argument that works the same way. The callback runs when the user changes the widget's value.
+
+:::
 
 
 
