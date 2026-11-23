@@ -1001,6 +1001,8 @@ We can create interactive tables with `st.dataframe()` or static tables with `st
 
 ::: {.column width="40%"}
 
+<br>
+
 We can group elements using `st.container()`.
 
 Let's add a border around our model parameters using `with st.container(border=True):`.
@@ -1022,11 +1024,43 @@ Indent the code for the elements you want inside the container.
 
 
 
+## Improving layout: `st.columns`
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<br>
+
+We can use `st.columns()` to create containers that are side-by-side.
+
+We specify the number of columns we want, and it returns a list of container objects which we can add elements to using the `with` notation.
+
+<br>
+
+Let's place our consultation length inputs in columns.
+
+:::
+
+::: {.column width="60%"}
+
+```{.python code-line-numbers="15,17,26"}
+{{< include code/simple/inputs_container_columns.py >}}
+```
+
+:::
+
+::::
+
+
+
 ## Improving layout: `st.expander`
 
 :::: {.columns}
 
 ::: {.column width="30%"}
+
+<br><br>
 
 `st.expander()` can be used to hide optional data.
 
@@ -1052,6 +1086,8 @@ Let's hide the dataframe with results from individual replications.
 :::: {.columns}
 
 ::: {.column width="30%"}
+
+<br><br>
 
 Use `st.space()` to add space between sections of the app.
 
