@@ -18,20 +18,24 @@ with st.container(border=True):
 
     st.subheader("Nurses")
 
-    st.number_input(
-        label="Mean nurse consultation length (minutes)",
-        min_value=3.0,
-        max_value=9.0,
-        value=6.0,
-        key="mean_nurse_consult_time",
-    )
+    mean_col, sd_col = st.columns(2)
 
-    st.number_input(
-        label="Standard deviation of nurse consultation length (minutes)",
-        min_value=0.0,
-        value=1.0,
-        key="sd_nurse_consult_time",
-    )
+    with mean_col:
+        st.number_input(
+            label="Mean consultation length (minutes)",
+            min_value=3.0,
+            max_value=9.0,
+            value=6.0,
+            key="mean_nurse_consult_time",
+        )
+
+    with sd_col:
+        st.number_input(
+            label="Standard deviation of consultation length (minutes)",
+            min_value=0.0,
+            value=1.0,
+            key="sd_nurse_consult_time",
+        )
 
     st.pills(label="Number of nurses", options=range(1, 5), default=1, key="num_nurses")
 
@@ -103,20 +107,24 @@ if st.button("Run simulation", type="primary"):
         x="mean_q_time_nurse",
     )
     fig.update_layout(
-        xaxis_title="Mean nurse queue time",
-        yaxis_title="Number of replications"
+        xaxis_title="Mean nurse queue time", yaxis_title="Number of replications"
     )
     st.plotly_chart(fig)
 
     with st.expander("View underlying data from each replication"):
-        st.dataframe(
-            trial.replication_df[
-                [
-                    "replication_id",
-                    "patient_counter",
-                    "mean_q_time_nurse",
-                    "sd_q_time_nurse",
-                    "perc_90_q_time_nurse",
-                ]
+        underlying = trial.replication_df[
+            [
+                "replication_id",
+                "patient_counter",
+                "mean_q_time_nurse",
+                "sd_q_time_nurse",
+                "perc_90_q_time_nurse",
             ]
+        ]
+
+        st.dataframe(underlying)
+
+        st.download_button(
+            label="Download table as CSV",
+            data=underlying.to_csv().encode("utf-8"),
         )
