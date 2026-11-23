@@ -995,6 +995,29 @@ We can create interactive tables with `st.dataframe()` or static tables with `st
 
 
 
+## Download button
+
+Use `st.download_button()` to let users download objects. The object has to be converted to an accepted format - for a dataframe, this means using `to_csv()`.
+
+```{.python}
+{{< include code/simple/download_button.py >}}
+```
+
+<br>
+
+::: {.fragment}
+
+**Note:** `st.dataframe` already shows a download-to-CSV icon when you hover over it. However, you may still want a separate button if:
+
+* It makes the option obvious, as users may not find the hover icon.
+* You don't display the data, just download it.
+* You want to control the filename and which columns are included.
+
+:::
+
+
+
+
 ## Improving layout: `st.container`
 
 :::: {.columns}
@@ -1097,7 +1120,7 @@ Set `size` to adjust the spacing. The default is `"small"`.
 
 ::: {.column width="70%"}
 
-```{.python code-line-numbers="47,80,95"}
+```{.python code-line-numbers="51,84,99"}
 {{< include ../app/singlepage/app.py >}}
 ```
 

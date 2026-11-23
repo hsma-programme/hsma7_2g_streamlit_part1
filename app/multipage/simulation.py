@@ -107,20 +107,24 @@ if st.button("Run simulation", type="primary"):
         x="mean_q_time_nurse",
     )
     fig.update_layout(
-        xaxis_title="Mean nurse queue time",
-        yaxis_title="Number of replications"
+        xaxis_title="Mean nurse queue time", yaxis_title="Number of replications"
     )
     st.plotly_chart(fig)
 
     with st.expander("View underlying data from each replication"):
-        st.dataframe(
-            trial.replication_df[
-                [
-                    "replication_id",
-                    "patient_counter",
-                    "mean_q_time_nurse",
-                    "sd_q_time_nurse",
-                    "perc_90_q_time_nurse",
-                ]
+        underlying = trial.replication_df[
+            [
+                "replication_id",
+                "patient_counter",
+                "mean_q_time_nurse",
+                "sd_q_time_nurse",
+                "perc_90_q_time_nurse",
             ]
+        ]
+
+        st.dataframe(underlying)
+
+        st.download_button(
+            label="Download table as CSV",
+            data=underlying.to_csv().encode("utf-8"),
         )

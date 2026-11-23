@@ -63,10 +63,7 @@ class Model:
         self.env = simpy.Environment()
         self.patient_counter = 0
 
-        self.logger = EventLogger(
-            env=self.env,
-            run_number=self.replication_id
-        )
+        self.logger = EventLogger(env=self.env, run_number=self.replication_id)
 
         self.receptionist = VidigiStore(
             self.env,

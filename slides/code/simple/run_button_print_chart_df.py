@@ -41,14 +41,14 @@ if st.button("Run simulation", type="primary"):
     )
     st.plotly_chart(fig)
 
-    st.dataframe(
-        trial.replication_df[
-            [
-                "replication_id",
-                "patient_counter",
-                "mean_q_time_nurse",
-                "sd_q_time_nurse",
-                "perc_90_q_time_nurse",
-            ]
+    underlying = trial.replication_df[
+        [
+            "replication_id",
+            "patient_counter",
+            "mean_q_time_nurse",
+            "sd_q_time_nurse",
+            "perc_90_q_time_nurse",
         ]
-    )
+    ]
+
+    st.dataframe(underlying)
