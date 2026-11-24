@@ -1047,6 +1047,22 @@ Indent the code for the elements you want inside the container.
 
 
 
+## Improving layout: `st.container`
+
+We've used `border=True`, but `st.container()` has other settings
+you can explore to adjust your layout. For example:
+
+* `horizonal=True` arranges elements side-by-side instead of vertically.
+* `gap="medium"` sets spacing between elements.
+* `height=300` gives a fixed height in pixels, with scrolling if the content doesn't fit.
+* `width="content"` makes container match the width of content (instead of width of app or parent container).
+* `horizonal_alignment="center"` or `vertical_alignment="center"` to centre items in the container.
+
+Many of the Streamlit elements we introduce today also shave additional settings - see the [Streamlit documentation](https://docs.streamlit.io/develop/api-reference) to find out what else you can customise.
+
+
+
+
 ## Improving layout: `st.columns`
 
 :::: {.columns}
