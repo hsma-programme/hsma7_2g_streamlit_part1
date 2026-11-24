@@ -403,7 +403,7 @@
 <p>App:</p>
 <p><img data-src="images/st_headers.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.title("This is a title")
@@ -437,7 +437,7 @@ st.subheader("This is a subheader")
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/st_text.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.write("Text")
@@ -473,7 +473,7 @@ st.code("Code")
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/st_radio.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.radio(
@@ -508,7 +508,7 @@ st.radio(
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/st_pills_seg.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.pills(
@@ -553,7 +553,7 @@ st.segmented_control(
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/st_slider_input.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.slider(
@@ -978,7 +978,7 @@ For this app, we’ll include all everything in <code>Param</code>.</p>
 </div><div class="column" style="width:45%;">
 <p><img data-src="images/inputs_arrivals.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.slider(
@@ -1015,7 +1015,7 @@ st.slider(
 </div><div class="column" style="width:45%;">
 <p><img data-src="images/inputs_consultation.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.number_input(
@@ -1050,7 +1050,7 @@ st.number_input(
 </div><div class="column" style="width:45%;">
 <p><img data-src="images/inputs_nurses.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.pills(
@@ -1106,7 +1106,7 @@ st.pills(
 </div><div class="column" style="width:45%;">
 <p><img data-src="images/inputs_simulation.png"></p>
 <!--
-```bcghtosygouhztf
+```orztpoqrsypgqgr
 import streamlit as st
 
 st.slider(
@@ -1383,6 +1383,18 @@ st.slider(
 <span id="cb27-57"><a aria-label="57"></a>        key<span class="op">=</span><span class="st">"num_replications"</span>,</span>
 <span id="cb27-58"><a aria-label="58"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
+</section>
+<section id="improving-layout-st.container-1" class="slide level2">
+<h2>Improving layout: <code>st.container</code></h2>
+<p>We’ve used <code>border=True</code>, but <code>st.container()</code> has other settings you can explore to adjust your layout. For example:</p>
+<ul>
+<li><code>horizonal=True</code> arranges elements side-by-side instead of vertically.</li>
+<li><code>gap="medium"</code> sets spacing between elements.</li>
+<li><code>height=300</code> gives a fixed height in pixels, with scrolling if the content doesn’t fit.</li>
+<li><code>width="content"</code> makes container match the width of content (instead of width of app or parent container).</li>
+<li><code>horizonal_alignment="center"</code> or <code>vertical_alignment="center"</code> to centre items in the container.</li>
+</ul>
+<p>Many of the Streamlit elements we introduce today also shave additional settings - see the <a href="https://docs.streamlit.io/develop/api-reference">Streamlit documentation</a> to find out what else you can customise.</p>
 </section>
 <section id="improving-layout-st.columns" class="slide level2">
 <h2>Improving layout: <code>st.columns</code></h2>
